@@ -27,26 +27,26 @@
 
 - Composer
 - PHP >= 5.5.9
-  
-  
+
+
 ## 步骤
 
-步骤一  
-安装 CgBlog  
-`composer create-project qsnh/meedu=dev-master` 
+步骤一
+安装 CgBlog
+`composer create-project cgbin/cgblog`
 
-步骤二  
-配置数据库，打开 .env 文件，修改下面的内容： 
+步骤二
+配置数据库，打开 .env 文件，修改下面的内容：
 
 ```
-DB_CONNECTION=mysql  
-DB_HOST=127.0.0.1  
-DB_PORT=3306  
-DB_DATABASE=homestead  
-DB_USERNAME=homestead  
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
-  
+
 配置基本信息
 
 ```
@@ -58,16 +58,16 @@ APP_LOG_LEVEL=debug
 APP_URL=http://localhost(这里修改你自己的地址)
 ```
 
-生成加密密钥：  
+生成加密密钥：
 
 `php artisan key:generate`
 
-步骤三  
-创建上传目录软链接： 
+步骤三
+创建上传目录软链接：
 
 `php artisan storage:link`
 
-步骤四  
+步骤四
 设置 storage 目录和 configs/web.php 权限为 777
 
 ```
@@ -75,24 +75,24 @@ chomod -R  0777 storage
 chomod -R  0777 config/web.php 777
 ````
 
-步骤五  
+步骤五
 配置伪静态并设置 meedu 的运行目录为 public 。
 
 伪静态规则（Nginx）：
 
 ```
-location / {  
-	try_files $uri $uri/ /index.php$is_args$query_string;  
+location / {
+	try_files $uri $uri/ /index.php$is_args$query_string;
 }
 ```
 
-步骤六  
+步骤六
 安装数据表
 `php artisan migrate`
 执行填充文件
 `php artisan db:seed`
 
-步骤七  
+步骤七
 到这里，网站可以正常访问了。但是想要整个程序完整运行，还需进行后续配置。
 
 后台登录地址：http://youdomain.com/admin/index
