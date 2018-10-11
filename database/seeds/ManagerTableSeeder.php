@@ -18,7 +18,7 @@ class ManagerTableSeeder extends Seeder
                 'gender' => rand(1,3),
                 'mobile' => rand(10000000000,19999999999),
                 'email' => str_random(6).'@qq.com',
-                'role_id' => rand(1,5),
+                'role_id' => '1',
                 'created_at' => date('Y-m-d H:i:s',time()),
                 'updated_at' => date('Y-m-d H:i:s',time()),
                 'status' => '2'
