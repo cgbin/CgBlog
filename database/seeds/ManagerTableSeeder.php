@@ -21,7 +21,7 @@ class ManagerTableSeeder extends Seeder
                 'role_id' => rand(1,5),
                 'created_at' => date('Y-m-d H:i:s',time()),
                 'updated_at' => date('Y-m-d H:i:s',time()),
-                'status' => rand(1)
+                'status' => '1'
 
             ];
         for ($i=1; $i <10 ; $i++) {
