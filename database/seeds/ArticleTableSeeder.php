@@ -19,7 +19,7 @@ class ArticleTableSeeder extends Seeder
         for ($i=0; $i <9 ; $i++) {
             $data[$i] = [
                 'title' => str_random(10),
-                'editor' => $faker -> userName,
+                'editor' => str_random(10),
                 'tags' => str_random(5),
                 'description' => str_random(100),
                 'content' => str_random(100),
