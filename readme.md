@@ -67,7 +67,7 @@ APP_URL=http://localhost(这里修改你自己的地址)
 
 ```
 chmod -R  777 storage
-chmod -R  777 config/web.php 77
+chmod -R  777 config/web.php 
 ````
 
 步骤五
