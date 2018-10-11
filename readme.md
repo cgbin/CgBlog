@@ -1,4 +1,4 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center">CgBlog</p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -7,45 +7,95 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## 介绍
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+功能:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 文章管理模块
+- 文章分类管理
+- 文章回收站
+- RBAC权限管理模块
+- 友情链接管理
+- 自定义导航条前台
+- 网站配置项
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+## 安装教程
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+环境要求:
 
-## Laravel Sponsors
+- Composer
+- PHP >= 5.5.9
+  
+  
+## 步骤
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+步骤一  
+安装 CgBlog  
+`composer create-project qsnh/meedu=dev-master` 
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+步骤二  
+配置数据库，打开 .env 文件，修改下面的内容： 
 
-## Contributing
+```
+DB_CONNECTION=mysql  
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=homestead  
+DB_USERNAME=homestead  
+DB_PASSWORD=secret
+```
+  
+配置基本信息
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```
+APP_NAME=MeEdu
+APP_ENV=local(这里如果正式运行，请修改为：production)
+APP_KEY=
+APP_DEBUG=true(这里如果是正式运行，请修改为：false)
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost(这里修改你自己的地址)
+```
 
-## Security Vulnerabilities
+生成加密密钥：  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+`php artisan key:generate`
 
-## License
+步骤三  
+创建上传目录软链接： 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+`php artisan storage:link`
+
+步骤四  
+设置 storage 目录和 configs/web.php 权限为 777
+
+```
+chomod -R  0777 storage
+chomod -R  0777 config/web.php 777
+````
+
+步骤五  
+配置伪静态并设置 meedu 的运行目录为 public 。
+
+伪静态规则（Nginx）：
+
+```
+location / {  
+	try_files $uri $uri/ /index.php$is_args$query_string;  
+}
+```
+
+步骤六  
+安装数据表
+`php artisan migrate`
+执行填充文件
+`php artisan db:seed`
+
+步骤七  
+到这里，网站可以正常访问了。但是想要整个程序完整运行，还需进行后续配置。
+
+后台登录地址：http://youdomain.com/admin/index
+超级管理员账号: admin  密码: 123
+
+
