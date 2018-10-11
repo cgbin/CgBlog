@@ -22,7 +22,7 @@
 - Composer
 - PHP >= 5.5.9
 - Zip PHP Extension
-- 开启php.ini的配置，把 disable_functions（禁用函数列表）这行里的 proc_open和proc_get_status 函数删除，然后重启 PHP 服务
+- 开启php.ini的配置，把 disable_functions（禁用函数列表）这行里的 proc_open和proc_get_status、symlink 函数删除，然后重启 PHP 服务
 
 ## 步骤
 
@@ -66,8 +66,8 @@ APP_URL=http://localhost(这里修改你自己的地址)
 设置 storage 目录和 configs/web.php 权限为 777
 
 ```
-chomod -R  0777 storage
-chomod -R  0777 config/web.php 777
+chmod -R  777 storage
+chmod -R  777 config/web.php 77
 ````
 
 步骤五
@@ -81,16 +81,16 @@ location / {
 }
 ```
 
-步骤六
-安装数据表
-`php artisan migrate`
-执行填充文件
+步骤六  
+安装数据表  
+`php artisan migrate`  
+执行填充文件  
 `php artisan db:seed`
 
 步骤七
 到这里，网站可以正常访问了。但是想要整个程序完整运行，还需进行后续配置。
 
-后台登录地址：http://youdomain.com/admin/index
+后台登录地址：http://youdomain.com/admin/index  
 超级管理员账号: admin  密码: 123
 
 
