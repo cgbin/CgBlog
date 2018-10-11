@@ -1,4 +1,4 @@
-@extends('Index.common')
+@extends('index.common')
 
 @section('title','详情页')
 
