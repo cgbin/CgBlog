@@ -17,7 +17,7 @@ class MemberTableSeeder extends Seeder
 
         for ($i=0; $i <24 ; $i++) {
             $data[] = [
-                'username' => $faker -> userName,
+                'username' => str_random(6),
                 'password' => bcrypt('123456'),
                 'gender' => rand(1,3),
                 'mobile' => $faker -> phoneNumber,
