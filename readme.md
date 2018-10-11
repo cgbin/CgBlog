@@ -1,4 +1,4 @@
-<p align="center">CgBlog</p>
+![avatar](http://p06ero5ye.bkt.clouddn.com/@$%7B5U1UJ7IY8A5C$@STP%25@X.png)
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -9,7 +9,7 @@
 
 ## 介绍
 
-功能:
+后台功能:
 
 - 文章管理模块
 - 文章分类管理
@@ -27,7 +27,8 @@
 
 - Composer
 - PHP >= 5.5.9
-
+- Zip PHP Extension
+- 开启php.ini的配置，把 disable_functions（禁用函数列表）这行里的 proc_open和proc_get_status 函数删除，然后重启 PHP 服务
 
 ## 步骤
 
