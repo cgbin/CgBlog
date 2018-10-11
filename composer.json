@@ -1,5 +1,5 @@
 {
-    "name": "cgbin/CgBlog",
+    "name": "cgbin/cgblog",
     "description": "personal blog",
     "keywords": ["framework", "laravel","blog"],
     "license": "MIT",
