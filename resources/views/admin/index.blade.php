@@ -56,13 +56,17 @@
 <aside class="Hui-aside">
     <div class="menu_dropdown bk_2">
         @foreach($res as $val)
-            @if(strpos(Auth::guard('admin')->user()->role->auth_ids,(string)$val['id']) !== false ||  Auth::guard('admin')->user()->role_id == '1')
+
+            @if(in_array($val['id'],explode(',',Auth::guard('admin')->user()->role->auth_ids)) ||  Auth::guard('admin')->user()->role_id == '1')
+
         <dl id="menu-admin">
             <dt><i class="Hui-iconfont">&#xe6f5;</i> {{$val['auth_name']}}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd style="display: block;">
                 <ul>
                 @foreach($val['children'] as $v2)
-                    @if(strpos(Auth::guard('admin')->user()->role->auth_ids,(string)$v2['id']) !== false ||  Auth::guard('admin')->user()->role_id == '1')
+
+                    @if(in_array($v2['id'],explode(',',Auth::guard('admin')->user()->role->auth_ids)) ||  Auth::guard('admin')->user()->role_id == '1')
+
                     <li><a data-href="{{url("admin/$v2[action]")}}" data-title="{{$v2['auth_name']}}" href="javascript:void(0)">{{$v2['auth_name']}}</a></li>
                     @endif
                 @endforeach

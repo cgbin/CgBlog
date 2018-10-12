@@ -1,3 +1,27 @@
+<?php
+use App\Http\Model\Admin\Navs;
+use App\Http\Model\Admin\Links;
+use App\Http\Model\Admin\Article;
+
+ //首页头部导航栏
+        $navs = Navs::orderBy('navs_order')->get();
+        //友情链接
+        $links = Links::where('links_status', '=', 1)->orderBy('links_order')->get();
+        //文章点击排行
+        $clicks_rank =  Article::orderBy('article.clicks','desc')
+            ->select('id','title','clicks')
+            ->where('article.status', '=', 1)
+            ->take(5)
+            ->get();
+        //最新文章
+        $article_new =  Article::orderBy('article.updated_at','desc')
+            ->select('id','title')
+            ->where('article.status', '=', 1)
+            ->take(8)
+            ->get();
+?>
+
+
 <!doctype html>
 <html>
 <head>

@@ -4,9 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Http\Model\Admin\Navs;
-use App\Http\Model\Admin\Links;
-use App\Http\Model\Admin\Article;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         //首页头部导航栏
-        $navs = Navs::orderBy('navs_order')->get();
+       /* $navs = Navs::orderBy('navs_order')->get();
         //友情链接
         $links = Links::where('links_status', '=', 1)->orderBy('links_order')->get();
         //文章点击排行
@@ -54,7 +51,7 @@ class AppServiceProvider extends ServiceProvider
             'links'=> $links,
             'clicks_rank'=>$clicks_rank,
             'article_new'=>$article_new,
-            ]);
+            ]); */
     }
 
     /**

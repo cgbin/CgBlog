@@ -51,7 +51,7 @@ class Auth extends User
         $arr = array();
         foreach ($data as $k => $v) {
             if ($v['pid'] == $pid) {
-               $v['children'] = self::getTree($data,$v['id']);
+               $v['children'] = self::digui($data,$v['id']);
                $arr[] = $v;
             }
         }
