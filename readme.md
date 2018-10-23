@@ -30,6 +30,9 @@
 安装 CgBlog
 `composer create-project cgbin/cgblog`
 
+下载插件包  
+`composer update`
+
 步骤二
 配置数据库，打开 .env 文件，修改下面的内容：
 
