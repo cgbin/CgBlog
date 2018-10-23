@@ -22,6 +22,7 @@
 - Composer
 - PHP >= 5.5.9
 - Zip PHP Extension
+- fileinfo PHP Extension
 - 开启php.ini的配置，把 disable_functions（禁用函数列表）这行里的 proc_open和proc_get_status、symlink 函数删除，然后重启 PHP 服务
 
 ## 步骤
