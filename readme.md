@@ -92,7 +92,7 @@ location / {
 `php artisan db:seed`
 
 步骤七
-到这里，网站可以正常访问了。但是想要整个程序完整运行，还需进行后续配置。
+到这里，网站可以正常访问了。
 
 后台登录地址：http://youdomain.com/admin/index  
 超级管理员账号: admin  密码: 123
