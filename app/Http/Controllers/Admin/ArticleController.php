@@ -125,7 +125,7 @@ class ArticleController extends Controller
     //获取提交的修改文章内容  article/{id} *PUT
     public function article_update(Request $request,$id){
         $id=(int)$id;
-        $input=$request->except('_token','_method');
+        $input=$request->except('_token','_method','file');
 
 
         if ($request->isMethod('PUT')) {
