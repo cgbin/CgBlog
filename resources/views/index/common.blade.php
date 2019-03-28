@@ -30,6 +30,8 @@ use App\Http\Model\Admin\Article;
 <meta name="keywords" content="个人博客模板,博客模板" />
 <meta name="description" content="寻梦主题的个人博客模板，优雅、稳重、大气,低调。" />
 <link href="{{asset('index/statics/css/base.css')}}" rel="stylesheet">
+<link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 @section('css')
 
 @show
