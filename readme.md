@@ -1,4 +1,4 @@
-![avatar](http://p06ero5ye.bkt.clouddn.com/@$%7B5U1UJ7IY8A5C$@STP%25@X.png)
+![avatar](http://qiniu.cgbin.top/KOKU1MWHM@KKU%29%7BJLBXEHXJ.png)
 
 
 ## 介绍
