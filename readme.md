@@ -70,11 +70,12 @@ APP_URL=http://localhost(这里修改你自己的地址)
 `php artisan storage:link`
 
 步骤四
-设置 storage 目录和 configs/web.php 权限为 777
+设置 storage 目录、 configs/web.php 、ueditor图片上传目录权限为 777
 
 ```
 chmod -R  777 storage
-chmod -R  777 config/web.php 
+chmod -R  777 config/web.php
+chmod -R  777 public/admin/lib/ueditor/php/upload
 ````
 
 步骤五
