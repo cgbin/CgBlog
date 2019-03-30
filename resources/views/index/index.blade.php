@@ -34,7 +34,7 @@
     </figure>
     @endif
     <ul>
-      <p>{{$data->description}}</p>
+      <p style="word-break:break-all;">{{$data->description}}</p>
       <a title="{{$data->title}}" href='{{url("index/$data->id")}}' target="_blank" class="readmore">阅读全文>></a>
     </ul>
     <p class="dateview"><span style="padding-left: 8px">{{$data->created_at}}</span><span>作者：{{$data->editor}}</span><span>文章分类：
