@@ -55,7 +55,7 @@ $(function(){
         "columns": [
             {
                   "render": function (data, type, row) {
-                    if (row.id == '1' && {{Auth::guard('admin')->user()->id}} != '1') {
+                    if (row.id == '1' ) {
                         return '';
                     }else{
                     return "<input type='checkbox' value="+ row.id +" name='checkbox'>";
